@@ -1,12 +1,15 @@
 version: 1
 indices:
-  sitemap:
+  sitemap: &default
     target: /sitemap.json
     exclude:
       - 'drafts/**'
       - 'enrichment/**'
       - 'fragments/**'
       - 'products/**'
+      - '/es/**'
+      - '/fr/**'
+      - '/jp/**'
     properties:
       title:
         select: head > meta[property="og:title"]
@@ -35,6 +38,36 @@ indices:
         select: head > meta[name="category"]
         value: |
           attribute(el, 'content')
+  sitemap-es:
+    <<: *default
+    target: /es/sitemap.json
+    include:
+      - '/es/**'
+    exclude:
+      - '/es/drafts/**'
+      - '/es/enrichment/**'
+      - '/es/fragments/**'
+      - '/es/products/**'
+  sitemap-fr:
+    <<: *default
+    target: /fr/sitemap.json
+    include:
+      - '/fr/**'
+    exclude:
+      - '/fr/drafts/**'
+      - '/fr/enrichment/**'
+      - '/fr/fragments/**'
+      - '/fr/products/**'
+  sitemap-jp:
+    <<: *default
+    target: /jp/sitemap.json
+    include:
+      - '/jp/**'
+    exclude:
+      - '/jp/drafts/**'
+      - '/jp/enrichment/**'
+      - '/jp/fragments/**'
+      - '/jp/products/**'
   enrichment:
     target: /enrichment/enrichment.json
     include:

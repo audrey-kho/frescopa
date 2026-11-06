@@ -1,5 +1,24 @@
 sitemaps:
   default:
-    source: /sitemap.json
-    destination: /sitemap-content.xml
+    default: en
     lastmod: YYYY-MM-DD
+    languages:
+      en:
+        source: /sitemap.json
+        destination: /sitemap-content.xml
+        hreflang: en
+      es:
+        source: /es/sitemap.json
+        destination: /sitemap-es.xml
+        hreflang: es
+        alternate: /es/{path}
+      fr:
+        source: /fr/sitemap.json
+        destination: /sitemap-fr.xml
+        hreflang: fr
+        alternate: /fr/{path}
+      jp:
+        source: /jp/sitemap.json
+        destination: /sitemap-jp.xml
+        hreflang: ja
+        alternate: /jp/{path}
