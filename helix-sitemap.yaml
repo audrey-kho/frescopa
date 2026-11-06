@@ -1,5 +1,6 @@
 sitemaps:
   default:
+    origin: https://main--frescopa--audrey-kho.aem.live
     default: en
     lastmod: YYYY-MM-DD
     languages:
